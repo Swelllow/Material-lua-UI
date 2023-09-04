@@ -1,4 +1,4 @@
-local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Swelllow/Material-lua-UI/main/UI"))()
 
 local X = Material.Load({
 	Title = "ChibuHub",
