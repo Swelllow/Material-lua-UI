@@ -1,7 +1,7 @@
 local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Swelllow/Material-lua-UI/main/Another%20version%20UI"))()
 
 local X = Material.Load({
-	Title = "ChibuHub",
+	Title = "7's Hub",
 	Style = 3,
 	SizeX = 500,
 	SizeY = 350,
