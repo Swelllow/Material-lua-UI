@@ -16,8 +16,9 @@ local Y = X.New({
 })
 
 local Z = X.New({
-	Title = "2"
+	Title = "Local"
 })
+
 
 local A = Y.Button({
 	Text = "Kill All",
@@ -40,6 +41,63 @@ local B = Y.Toggle({
 	end,
 	Enabled = false
 })
+
+
+-- speed script
+local function changeWalkSpeed(value)
+    local speed = tonumber(value)
+    local player = game.Players.LocalPlayer
+    
+    if speed and player then
+        local Char = player.Character or workspace:FindFirstChild(player.Name)
+        local Human = Char and Char:FindFirstChildWhichIsA("Humanoid")
+        
+        if Char and Human then
+            Human.WalkSpeed = speed
+        end
+    end
+end
+
+local B = Z.Slider({
+	Text = "Speed",
+	Callback = function(Value)
+	    changeWalkSpeed(Value)
+	end,
+	Min = 10,
+	Max = 100,
+	Def = 16
+})
+
+-- JumpPower Script
+local function changeJumpPower(value)
+    local jpower = tonumber(value)
+    local player = game.Players.LocalPlayer
+    
+    if jpower and player then
+        local character = player.Character or workspace:FindFirstChild(player.Name)
+        local humanoid = character and character:FindFirstChildWhichIsA("Humanoid")
+        
+        if character and humanoid then
+            if humanoid:FindFirstChild("UseJumpPower") then
+                humanoid.UseJumpPower = true
+                humanoid.JumpPower = jpower
+            else
+                humanoid.JumpHeight = jpower
+            end
+        end
+    end
+end
+
+local B = Z.Slider({
+    Text = "Jump",
+    Callback = function(Value)
+        changeJumpPower(Value)
+    end,
+    Min = 10,
+    Max = 100,
+    Def = 50
+})
+
 
 local C = Y.Slider({
 	Text = "Slip and... you get the idea",
